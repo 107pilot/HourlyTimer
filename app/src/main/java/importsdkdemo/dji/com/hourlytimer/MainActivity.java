@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
                   //  set_repeater();
                     tv1.setText("It's On");
                     toSpeak = "It's On!";
-                    play_text(toSpeak);
+                    random_words();
+                   // play_text(toSpeak);
                 } else {
                     if(alarmMgr != null){
                         alarmMgr.cancel(alarmIntent);
@@ -93,6 +94,12 @@ public class MainActivity extends AppCompatActivity {
                 AlarmManager.INTERVAL_DAY, alarmIntent);
 
 
+    }
+    private void random_words (){
+        String getWord = "testy";
+        toSpeak = "You are so " + getWord + ".";
+        ed1.setText(toSpeak);
+        play_text(toSpeak);
     }
 
     private void play_text(String toSpeak){
